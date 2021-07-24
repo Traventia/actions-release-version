@@ -1,0 +1,17 @@
+name: "GitHub Commit & Push"
+description: "Release a new version of the current project"
+author: "Traventia"
+inputs:
+  github_token:
+    description: 'Token for the repo. Can be passed in using $\{{ secrets.GITHUB_TOKEN }}'
+    required: true
+  branch:
+    description: "Destination branch to push changes"
+    required: false
+    default: "master"
+runs:
+  using: "node14"
+  main: "start.js"
+branding:
+  icon: "airplay"
+  color: "orange"
