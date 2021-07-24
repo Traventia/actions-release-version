@@ -1,6 +1,6 @@
 const spawn = require("child_process").spawn;
 const path = require("path");
-const releaseVersionJs = require("../actions-release-version/release_version_js");
+const releaseVersionJs = require("./release_version_js");
 
 const exec = (cmd, args = []) =>
   new Promise((resolve, reject) => {
