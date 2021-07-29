@@ -29,6 +29,7 @@ git push "${remote_repo}" HEAD:"${target_branch}" --tags;
 git checkout release/v1
 
 git merge --squash "${target_branch}"
+git commit -m "## $new_version"
 
 git tag "$new_version"
 
