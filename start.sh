@@ -24,10 +24,12 @@ git add -A
 
 git commit -m "{$commit_message}" || exit 0
 
-git tag "$new_version"
-
 git push "${remote_repo}" HEAD:"${target_branch}" --tags;
 
 git checkout release/v1
-git merge "${target_branch}" 
+
+git merge --squash "${target_branch}"
+
+git tag "$new_version"
+
 git push "${remote_repo}" HEAD:release/v1 --tags;
