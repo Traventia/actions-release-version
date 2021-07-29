@@ -27,3 +27,7 @@ git commit -m "{$commit_message}" || exit 0
 git tag "$new_version"
 
 git push "${remote_repo}" HEAD:"${target_branch}" --tags;
+
+git checkout HEAD:release/v1
+git merge HEAD:"${target_branch}" 
+git push "${remote_repo}" HEAD:release/v1 --tags;
